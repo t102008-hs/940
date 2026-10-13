@@ -9,12 +9,30 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="輔導系統">
+  <meta name="theme-color" content="#f5ebe0">
   
   <!-- 1. 替換為你的 GitHub Raw 圖片網址 -->
   <link rel="apple-touch-icon" href="https://docs.google.com/drawings/d/e/2PACX-1vR2JZohETPGiTtQdFUBetcrL9Qo9odb1HXwIhZO1oTj-fQmaM8cuct_vpSb69cPUE1hJCfmIPiIx6mK/pub?w=960&h=720">
   <link rel="icon" href="https://docs.google.com/drawings/d/e/2PACX-1vR2JZohETPGiTtQdFUBetcrL9Qo9odb1HXwIhZO1oTj-fQmaM8cuct_vpSb69cPUE1hJCfmIPiIx6mK/pub?w=960&h=720">
   
+  <!-- 🌟 智慧路由腳本 (寫在頭部，確保跳轉不閃爍) -->
+  <script>
+    // 2. 替換為你的 GAS 執行網址
+    const gasUrl = "https://script.google.com/a/macros/tmail.hc.edu.tw/s/AKfycbw-F3mVG8vOuZyC9s2WX-yUyYarFUwNr-kXCvjBSD6gOyUqdSETBfev_brTrfU7Xiijug/exec";
+    
+    // 判斷是否從「手機桌面圖示」開啟
+    const isStandalone = window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches;
+    // 判斷是否為「行動裝置 (手機/平板)」
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    
+    // 如果是「從桌面圖示開啟」或是「從電腦版開啟」，瞬間自動跳轉，零點擊！
+    if (isStandalone || !isMobile) {
+      window.location.replace(gasUrl);
+    }
+  </script>
+
   <style>
+    /* 只有當需要顯示提示畫面時，這些樣式才會用到 */
     body {
       margin: 0; height: 100vh; display: flex; flex-direction: column; 
       align-items: center; justify-content: center; background-color: #f5ebe0; 
@@ -31,41 +49,23 @@
     .btn { 
       display: inline-block; padding: 14px 28px; background: #b08968; color: white; 
       border-radius: 99px; text-decoration: none; font-weight: bold; font-size: 15px; width: 80%;
+      box-shadow: 0 4px 15px rgba(176,137,104,0.4); transition: transform 0.2s;
     }
+    .btn:active { transform: scale(0.95); }
   </style>
 </head>
 <body>
 
-  <!-- 只有在 Safari 一般瀏覽器中會顯示，用來讓系統有時間抓圖示 -->
+  <!-- 這個畫面只會出現在「手機」的「一般瀏覽器」中 -->
   <div class="container" id="install-view">
-    <!-- 2. 這裡也要替換為你的 GitHub Raw Logo 圖片網址 -->
+    <!-- 3. 這裡也要替換為你的 GitHub Raw Logo 圖片網址 -->
     <img src="https://docs.google.com/drawings/d/e/2PACX-1vR2JZohETPGiTtQdFUBetcrL9Qo9odb1HXwIhZO1oTj-fQmaM8cuct_vpSb69cPUE1hJCfmIPiIx6mK/pub?w=960&h=720" alt="Logo">
     <h2>輔導系統</h2>
     <p>1. 請點擊下方「分享」按鈕 📤<br>2. 選擇<strong>「加入主畫面」</strong><br>以取得專屬桌面圖示</p>
     
-    <!-- 3. 替換為你的 GAS 執行網址 -->
+    <!-- 4. 替換為你的 GAS 執行網址 -->
     <a href="https://script.google.com/a/macros/tmail.hc.edu.tw/s/AKfycbw-F3mVG8vOuZyC9s2WX-yUyYarFUwNr-kXCvjBSD6gOyUqdSETBfev_brTrfU7Xiijug/exec" class="btn">略過，直接開啟</a>
   </div>
-
-  <!-- 從桌面開啟時顯示的瞬間過場畫面 -->
-  <div id="loading-view" style="display: none;">
-    <h2>🚀 系統啟動中...</h2>
-  </div>
-
-  <script>
-    // 4. 再次替換為你的 GAS 執行網址
-    const gasUrl = "https://script.google.com/a/macros/tmail.hc.edu.tw/s/AKfycbw-F3mVG8vOuZyC9s2WX-yUyYarFUwNr-kXCvjBSD6gOyUqdSETBfev_brTrfU7Xiijug/exec";
-    
-    // 偵測使用者是否從「手機桌面 (加入主畫面後)」開啟這個網頁
-    const isStandalone = window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches;
-
-    if (isStandalone) {
-      // 若從桌面圖示點開：隱藏提示畫面，並「瞬間自動跳轉」，零點擊進入系統！
-      document.getElementById('install-view').style.display = 'none';
-      document.getElementById('loading-view').style.display = 'block';
-      window.location.replace(gasUrl);
-    }
-  </script>
 
 </body>
 </html>
