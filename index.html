@@ -5,67 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>輔導系統</title>
   
-  <!-- PWA 與加入主畫面設定 -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="輔導系統">
   <meta name="theme-color" content="#f5ebe0">
   
-  <!-- 1. 替換為你的 GitHub Raw 圖片網址 -->
+  <!-- 替換為你的 GitHub Raw 圖片網址 -->
   <link rel="apple-touch-icon" href="https://docs.google.com/drawings/d/e/2PACX-1vR2JZohETPGiTtQdFUBetcrL9Qo9odb1HXwIhZO1oTj-fQmaM8cuct_vpSb69cPUE1hJCfmIPiIx6mK/pub?w=960&h=720">
   <link rel="icon" href="https://docs.google.com/drawings/d/e/2PACX-1vR2JZohETPGiTtQdFUBetcrL9Qo9odb1HXwIhZO1oTj-fQmaM8cuct_vpSb69cPUE1hJCfmIPiIx6mK/pub?w=960&h=720">
   
-  <!-- 🌟 智慧路由腳本 (寫在頭部，確保跳轉不閃爍) -->
-  <script>
-    // 2. 替換為你的 GAS 執行網址
-    const gasUrl = "https://script.google.com/a/macros/tmail.hc.edu.tw/s/AKfycbw-F3mVG8vOuZyC9s2WX-yUyYarFUwNr-kXCvjBSD6gOyUqdSETBfev_brTrfU7Xiijug/exec";
-    
-    // 判斷是否從「手機桌面圖示」開啟
-    const isStandalone = window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches;
-    // 判斷是否為「行動裝置 (手機/平板)」
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    
-    // 如果是「從桌面圖示開啟」或是「從電腦版開啟」，瞬間自動跳轉，零點擊！
-    if (isStandalone || !isMobile) {
-      window.location.replace(gasUrl);
-    }
-  </script>
-
   <style>
-    /* 只有當需要顯示提示畫面時，這些樣式才會用到 */
-    body {
-      margin: 0; height: 100vh; display: flex; flex-direction: column; 
-      align-items: center; justify-content: center; background-color: #f5ebe0; 
-      font-family: 'Helvetica Neue', 'Noto Sans TC', sans-serif; color: #755438; text-align: center;
-    }
-    .container { 
-      padding: 35px 25px; background: rgba(255,255,255,0.85); border-radius: 28px; 
-      width: 80%; max-width: 320px; box-shadow: 0 10px 30px rgba(176,137,104,0.15); 
-      backdrop-filter: blur(10px);
-    }
-    img { width: 90px; height: 90px; border-radius: 20px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-    h2 { margin: 0 0 15px 0; font-size: 22px; font-weight: bold; }
-    p { font-size: 14px; color: #936e4d; line-height: 1.6; margin-bottom: 25px; font-weight: 500; }
-    .btn { 
-      display: inline-block; padding: 14px 28px; background: #b08968; color: white; 
-      border-radius: 99px; text-decoration: none; font-weight: bold; font-size: 15px; width: 80%;
-      box-shadow: 0 4px 15px rgba(176,137,104,0.4); transition: transform 0.2s;
-    }
-    .btn:active { transform: scale(0.95); }
+    body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background-color: #f5ebe0; }
+    iframe { border: none; width: 100%; height: 100%; position: absolute; top: 0; left: 0; }
   </style>
 </head>
 <body>
-
-  <!-- 這個畫面只會出現在「手機」的「一般瀏覽器」中 -->
-  <div class="container" id="install-view">
-    <!-- 3. 這裡也要替換為你的 GitHub Raw Logo 圖片網址 -->
-    <img src="https://docs.google.com/drawings/d/e/2PACX-1vR2JZohETPGiTtQdFUBetcrL9Qo9odb1HXwIhZO1oTj-fQmaM8cuct_vpSb69cPUE1hJCfmIPiIx6mK/pub?w=960&h=720" alt="Logo">
-    <h2>輔導系統</h2>
-    <p>1. 請點擊下方「分享」按鈕 📤<br>2. 選擇<strong>「加入主畫面」</strong><br>以取得專屬桌面圖示</p>
-    
-    <!-- 4. 替換為你的 GAS 執行網址 -->
-    <a href="https://script.google.com/a/macros/tmail.hc.edu.tw/s/AKfycbw-F3mVG8vOuZyC9s2WX-yUyYarFUwNr-kXCvjBSD6gOyUqdSETBfev_brTrfU7Xiijug/exec" class="btn">略過，直接開啟</a>
-  </div>
-
+  <!-- 替換為你的 GAS 執行網址 -->
+  <iframe src="https://script.google.com/a/macros/tmail.hc.edu.tw/s/AKfycbw-F3mVG8vOuZyC9s2WX-yUyYarFUwNr-kXCvjBSD6gOyUqdSETBfev_brTrfU7Xiijug/exec"></iframe>
 </body>
 </html>
