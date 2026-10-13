@@ -2,30 +2,38 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>輔導與預約整合系統 - 跳轉中</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>輔導系統</title>
   
-  <!-- 第一重防護：Meta 自動跳轉 (設定 0 秒) -->
-  <meta http-equiv="refresh" content="0; url=https://script.google.com/a/macros/tmail.hc.edu.tw/s/AKfycbzu-ni5fMZX8VRlbYIOyl7-EoeNH2zw4rOlvuEEM7G2BPiR4miG0L60HLhcUB35sE2k/exec">
+  <!-- 1. PWA 與加入主畫面設定寫在最外層，iOS 才看得到 -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="輔導系統">
   
-  <!-- 第二重防護：JavaScript 強制替換網址 -->
-  <script>
-    // 使用 replace 可以避免破壞瀏覽器的「上一頁」歷史紀錄
-    window.location.replace("https://script.google.com/a/macros/tmail.hc.edu.tw/s/AKfycbzu-ni5fMZX8VRlbYIOyl7-EoeNH2zw4rOlvuEEM7G2BPiR4miG0L60HLhcUB35sE2k/exec");
-  </script>
-
+  <!-- 2. 在這裡填入你剛剛取得的 GitHub Raw 圖片網址 -->
+  <link rel="apple-touch-icon" href="https://docs.google.com/drawings/d/e/2PACX-1vR2JZohETPGiTtQdFUBetcrL9Qo9odb1HXwIhZO1oTj-fQmaM8cuct_vpSb69cPUE1hJCfmIPiIx6mK/pub?w=960&h=720">
+  <link rel="icon" href="https://docs.google.com/drawings/d/e/2PACX-1vR2JZohETPGiTtQdFUBetcrL9Qo9odb1HXwIhZO1oTj-fQmaM8cuct_vpSb69cPUE1hJCfmIPiIx6mK/pub?w=960&h=720">
+  
   <style>
-    body { background-color: #f8fafc; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: 'Noto Sans TC', sans-serif; color: #64748b; }
-    .loader { text-align: center; }
-    .spinner { margin: 0 auto 1rem auto; width: 40px; height: 40px; border: 4px solid #e2e8f0; border-top-color: #3b82f6; border-radius: 50%; animation: spin 1s linear infinite; }
-    @keyframes spin { to { transform: rotate(360deg); } }
+    /* 讓內嵌的畫面完全填滿手機螢幕，不留白邊 */
+    body, html {
+      margin: 0; 
+      padding: 0; 
+      height: 100%; 
+      overflow: hidden; 
+      background-color: #f5ebe0; /* 你的奶茶主題底色 */
+    }
+    iframe {
+      border: none; 
+      width: 100%; 
+      height: 100%;
+    }
   </style>
 </head>
 <body>
-  <div class="loader">
-    <div class="spinner"></div>
-    <h2 style="color: #334155; margin-bottom: 0.5rem;">系統啟動中</h2>
-    <p>正在為您導向專屬安全環境...</p>
-  </div>
+
+  <!-- 3. 把你的 Google Apps Script 執行網址 (結尾是 /exec) 貼在這裡 -->
+  <iframe src="https://script.google.com/a/macros/tmail.hc.edu.tw/s/AKfycbw-F3mVG8vOuZyC9s2WX-yUyYarFUwNr-kXCvjBSD6gOyUqdSETBfev_brTrfU7Xiijug/exec"></iframe>
+
 </body>
 </html>
